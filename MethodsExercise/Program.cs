@@ -2,9 +2,9 @@
 {
     public class Program
     {
-        public static int AdditionInfiniteParams(params int[] numbers1) 
+        public static int Addition(int add1, int add2) 
         {
-            return numbers1.Sum();
+            return add1 + add2;
         }
         public static int Subtraction(int sub1, int sub2)
         {
@@ -46,10 +46,13 @@
             string favAnimal = Console.ReadLine();
             Console.WriteLine($"\nThat is awesome {userName}! Do you have a favorite band? What is their name?"); 
             string favBand = Console.ReadLine();
-            Console.WriteLine($"\nNow for some even more strange questions, bear with me okay {userName}? \nI need some numbers to add together. \nWill you please insert some numbers separated by a comma for me.");
+            Console.WriteLine($"\nNow for some even more strange questions, bear with me okay {userName}? \nI need some numbers to add together. \nWill you please insert a number for me.");
+            string addStr = Console.ReadLine();
+            int addNum1 = Convert.ToInt32(addStr);
+            Console.WriteLine("\nOkay, and a number to add to the last one?");
             string addStr0 = Console.ReadLine();
-            int addNum = Convert.ToInt32( addStr0 );
-            int totalSum = AdditionInfiniteParams(addNum);
+            int addNum2 = Convert.ToInt32(addStr0);
+            int totalSum = Addition(addNum1, addNum2);
             Console.WriteLine($"\nThank you {userName}! This will be like those MadLib books when you were young, \nso the effort will payoff in the end. I promise! Can I have some numbers to subtract please? Choose your first number.");
             string addStr1 = Console.ReadLine();
             int subIn1 = Convert.ToInt32(addStr1);
@@ -76,15 +79,16 @@
             int modIn = Convert.ToInt32(addStr7);
             int modTotal = Modulus(modIn);
             Console.WriteLine($"I met another person named {userName} once before.");
-            Console.WriteLine($" {userName} was very smart, especially with their money.");
-            Console.WriteLine($" {userName} always said it was because of their {favColor} socks.");
-            Console.WriteLine($" One day {userName} decided to try to gamble on their favorite sports team, the Fighting {favAnimal}s.");
-            Console.WriteLine($" They checked the ATM and their account balance was ${multTotal}!");
-            Console.WriteLine($" {userName} never gambled before and was nervous, so he had ${divTotal} drinks to try and relax.");
+            Console.WriteLine($"{userName} was very smart, especially with their money.");
+            Console.WriteLine($"{userName} always said it was because of their {favColor} socks.");
+            Console.WriteLine($"One day {userName} decided to try to gamble on their favorite sports team, the Fighting {favAnimal}s.");
+            Console.WriteLine($"They checked the ATM and the account balance was ${multTotal}!");
+            Console.WriteLine($"{userName} never gambled before and was nervous, so they had ${divTotal} in" +
+                $" drinks to try and relax.");
             Console.WriteLine($"{userName} placed a bet on the Fighting {favAnimal}s in the amount of ${totalSum}.");
             if (modTotal == 0)
             {
-                Console.WriteLine($"{userName} ended up losing the bet and ${subTotal} on it. Good thing for the band {favBand}, their music always took {userName}'s mind off of problems.");
+                Console.WriteLine($"{userName} ended up losing the bet and ${subTotal} by the end of the day. Good thing for the band {favBand}, \ntheir music always took {userName}'s mind off of problems.");
             }
             else 
             {
